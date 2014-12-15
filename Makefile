@@ -15,7 +15,7 @@ install: libnetrc.so libnetrc.h
 	$(MKDIR) $(libdir) && $(INSTALL) libnetrc.so $(libdir); \
 	$(MKDIR) $(includedir) && $(INSTALL) -m644 libnetrc.h $(includedir)
 netrc: netrc.c libnetrc.so libnetrc.h
-	$(CC) $(LDFLAGS) -L. -lnetrc $(CFLAGS) -o $@ $<
+	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $< libnetrc.so
 test: netrc
 	@./test.sh
 clean:

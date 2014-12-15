@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 export NETRC_FILE=`mktemp`
 cat <<EOF >$NETRC_FILE
